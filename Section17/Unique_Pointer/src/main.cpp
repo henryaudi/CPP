@@ -18,7 +18,7 @@ public:
 
   int get_data() const { return data; }
 
-  ~Test() { std::cout << "Test desctructor (" << data << ")" << endl; }
+  ~Test() { std::cout << "Test desctructor (" << data << ")" << std::endl; }
 };
 
 int main() {
