@@ -1,5 +1,13 @@
 #include <iostream>
 
+class DivideByZeroException {
+
+};
+
+class NegativeValueException {
+
+};
+
 double calculate_mpg(int miles, int gallons) {
   if (gallons == 0)
     throw 0;
