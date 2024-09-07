@@ -20,11 +20,31 @@ struct Person {
   }
 };
 
-int main() {
+std::ostream &operator<<(std::ostream &os, const Person &p) {
+  os << p.name;
+  return os;
+}
 
+template <typename T>
+void my_swap(T &a, T &b) {
+  T temp = a;
+  a = b;
+  b = temp;
+}
+
+int main() {
+  int x {100};
+  int y {2};
+  my_swap(x, y);
+  std::cout << "x = " << x << std::endl;
+  std::cout << "y = " << y << std::endl;
+
+  Person p1 {"Curly", 50};
+  Person p2 {"Moe", 25};
   func<int, int>(10, 20);
   func(2000, "Thomas");
   func(1000, std::string{"Jonas"});
+  func(p1, p2);
 
   // Person p1 {"Curly", 50};
   // Person p2 {"Moe", 25};
