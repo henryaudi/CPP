@@ -4,7 +4,8 @@
 template <typename T, int N>
 class Array {
     int size {N};
-    T values[N];    // N needs to be known at compile-time
+    T values[N];    // N needs to be known at compile-time,
+                    // values are going to be any type.
 
     friend std::ostream &operator<<(std::ostream &os, const Array<T, N> &arr) {
         os << "[ ";
