@@ -57,9 +57,34 @@ void find_test() {
   std::cout << "====================" << std::endl;
 }
 
+void count_test() {
+  std::cout << "\n====================" << std::endl;
+
+  std::vector<int> vec {1, 2, 3, 1, 2, 1, 2, 1, 1, 2};
+
+  int num = std::count(vec.begin(), vec.end(), 1);
+
+  std::cout << num << " occurrences found" << std::endl;
+}
+
+void count_if_test() {
+  std::cout << "\n====================" << std::endl;
+
+  std::vector<int> vec {1, 2, 3, 1, 2, 1, 2, 1, 1, 2};
+
+  int num = std::count_if(vec.begin(), vec.end(), [](int x) { return x % 2 == 0; });
+
+  std::cout << num << " even numbers found!" << std::endl;
+
+  num = std::count_if(vec.begin(), vec.end(), [](int x) { return x >= 5; });
+
+  std::cout << num << " numbers greater or equal to five was found." << std::endl;
+}
+
 int main() {
 
-  find_test();
+  // find_test();
+  count_test();
 
   return 0;
 }
